@@ -121,17 +121,21 @@ help:
 ###                                                                         ###
 ###############################################################################
 
-gckpp_Function.o      : gckpp_Parameters.o
+gckpp_Function.o      : gckpp_Parameters.o \
+                        gckpp_Global.o
 
 gckpp_Global.o        : gckpp_Parameters.o
 
-carbon_Funcs.o        : carbon_Funcs.F90
+carbon_Funcs.o        : carbon_Funcs.F90 \
+                        gckpp_Global.o
 
-rateLawUtilFuncs.o    : rateLawUtilFuncs.F90
+rateLawUtilFuncs.o    : rateLawUtilFuncs.F90 \
+                        gckpp_Global.o
 
 fullchem_HetStateFuncs.o : fullchem_HetStateFuncs.F90 \
                            gckpp_Precision.o \
-                           rateLawUtilFuncs.o
+                           rateLawUtilFuncs.o \
+                           gckpp_Global.o
 
 fullchem_RateLawFuncs.o : fullchem_RateLawFuncs.F90 \
                            gckpp_Precision.o \
