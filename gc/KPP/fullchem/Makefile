@@ -121,13 +121,16 @@ help:
 ###                                                                         ###
 ###############################################################################
 
-gckpp_Function.o      : gckpp_Parameters.o
+gckpp_Function.o      : gckpp_Parameters.o\
+                        gckpp_Global.o
 
 gckpp_Global.o        : gckpp_Parameters.o
 
-carbon_Funcs.o        : carbon_Funcs.F90
+carbon_Funcs.o        : carbon_Funcs.F90 \
+                        rateLawUtilFuncs.o
 
-rateLawUtilFuncs.o    : rateLawUtilFuncs.F90
+rateLawUtilFuncs.o    : rateLawUtilFuncs.F90 \
+                        gckpp_Global.o
 
 fullchem_HetStateFuncs.o : fullchem_HetStateFuncs.F90 \
                            gckpp_Precision.o \
@@ -198,7 +201,8 @@ gckpp_Util.o          : gckpp_Parameters.o      \
                         gckpp_Global.o          \
                         gckpp_Monitor.o
 
-stub_Hg_HetStateFuncs.o    : stub_Hg_HetStateFuncs.F90
+stub_Hg_HetStateFuncs.o    : stub_Hg_HetStateFuncs.F90 \
+                             gckpp_Global.o
 stub_aciduptake_DustChemFuncs.o : stub_aciduptake_DustChemFuncs.F90 \
                                   fullchem_RateLawFuncs.o
 

@@ -1,0 +1,32 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+MODULE module_input_chem_bioemiss
+
+END MODULE module_input_chem_bioemiss
+
