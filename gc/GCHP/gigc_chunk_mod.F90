@@ -1025,9 +1025,11 @@ CONTAINS
                                     value_DAYOFYR  = dayOfYr,    &
                                     value_HOUR     = hour,       &
                                     value_MINUTE   = minute,     &
+                                    value_SECOND   = second,     &
                                     value_HELAPSED = hElapsed,   &
                                     value_UTC      = utc,        &
                                     RC             = RC         )
+    write(6,*) "debug: Accept_External_Date_Time: updated", year, month, day, hour, minute, second, nymd, nhms
 
     ! Pass time values obtained from the ESMF environment to HEMCO
 #if !defined( MODEL_GEOS )
